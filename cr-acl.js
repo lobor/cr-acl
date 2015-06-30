@@ -109,7 +109,7 @@ angular.module("cr.acl", [])
     transclude: 'element',
     terminal: true,
     link: function(scope, elem, attr, ctrl, $transclude){
-      scope.$watch(attr.crGranted, function(){
+      //scope.$watch(attr.crGranted, function(){
       var allowedRoles = attr.crGranted.split(",");
       if(allowedRoles.indexOf(acl.getRole()) != -1) {
         $transclude(function(clone, newScope) {
@@ -121,7 +121,7 @@ angular.module("cr.acl", [])
           $animate.enter(clone, elem.parent(), elem);
         });
       }
-      });
+      //});
     }
   };
 }]);
